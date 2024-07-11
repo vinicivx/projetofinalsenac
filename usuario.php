@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
             background-color: #f8f9fa;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .home-link {
+        .home-link, .logout-link {
             display: inline-block;
             border: 2px solid #007bff;
             border-radius: 10px;
@@ -47,7 +47,7 @@ if ($result->num_rows > 0) {
             color: #007bff;
             transition: background-color 0.3s;
         }
-        .home-link:hover {
+        .home-link:hover, .logout-link:hover {
             background-color: #007bff;
             color: #fff;
         }
@@ -65,6 +65,7 @@ if ($result->num_rows > 0) {
                 </div>
 
                 <a href="homepage.php" class="home-link mt-4">Página inicial</a>
+                <a href="logout.php" class="logout-link mt-4">Sair</a>
             </div>
         </div>
     </div>

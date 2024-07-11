@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vinicin's Store</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@900&display=swap');
 
@@ -44,6 +45,15 @@
             margin: 0;
             padding: 10px;
             font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            color: #000;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+
+        .navbar-custom-2 p:hover {
+            color: #000;
+            border-bottom: 2px solid #000;
         }
     </style>
 </head>
@@ -66,13 +76,12 @@
             </div>
             <!-- Logo -->
             <a href="homepage.php" class="mx-auto text-decoration-none">
-                <h1 class="navbar-brand mb-0 text-dark">VINICIN'S STORE</h1>
+                <h1 class="navbar-brand mb-0 text-dark">VINICIN STORE</h1>
             </a>
             <!-- Links de usuário e carrinho -->
             <div class="d-flex align-items-center">
                 <a href="usuario.php"><img class="ml-4" src="imagens/utilidades/user-2935527_1280.png" alt="User"></a>
-                <a href="carrinho.php"><img class="ml-4" src="imagens/utilidades/shopping-cart-349544_1280.png"
-                        alt="Cart"></a>
+                <a href="carrinho.php"><img class="ml-4" src="imagens/utilidades/shopping-cart-349544_1280.png" alt="Cart"></a>
             </div>
         </div>
     </nav>
@@ -81,14 +90,13 @@
     <nav class="navbar navbar-expand-lg navbar-custom-2">
         <div class="container d-flex justify-content-between align-items-center">
             <a href="catalogo.php" class="text-decoration-none">
-                <p>camisetas</p>
+                <p>CAMISETAS</p>
             </a>
-
-            <a href="bermudas.php" class="text-decoration-none">
-                <p>bermudas</p>
+            <a href="catalogoBermudas.php" class="text-decoration-none">
+                <p>BERMUDAS</p>
             </a>
             <a href="casacos.php" class="text-decoration-none">
-                <p>casacos</p>
+                <p>CASACOS</p>
             </a>
         </div>
     </nav>
@@ -124,7 +132,7 @@
     <nav class="navbar navbar-expand-lg navbar-custom-2">
         <div class="container d-flex justify-content-center align-items-center">
             <p>© 2024 Vinicin's Store. Todos os direitos reservados. Vinicin's Store Comércio de Roupas e Acessórios
-                Ltda </p>
+                Ltda</p>
         </div>
     </nav>
 

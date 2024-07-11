@@ -1,13 +1,15 @@
 <?php
 session_start();
-include('db_connection.php');
+include ('db_connection.php');
 
 $query = "SELECT * FROM camisas";
 $result = $conn->query($query);
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -86,62 +88,79 @@ $result = $conn->query($query);
             color: #777;
             text-align: center;
         }
+        
     </style>
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container d-flex justify-content-between align-items-center">
-        <div class="d-flex align-items-center">
-            <form action="camisetas.php" method="get" class="form-inline">
-                <div class="form-group">
-                    <input type="text" name="query" placeholder="Buscar" class="form-control mr-2">
-                </div>
-                <button type="submit" class="btn btn-primary">
-                    <img src="imagens/magnifying-glass-1976105_1280.png" alt="Pesquisar">
-                </button>
-            </form>
-        </div>
-        <a href="homepage.php" class="mx-auto text-decoration-none">
-            <h1 class="navbar-brand mb-0 text-dark">VINICIN'S STORE</h1>
-        </a>
-        <div class="d-flex align-items-center">
-            <a href="usuario.php"><img class="ml-4" src="imagens/utilidades/user-2935527_1280.png" alt="User"></a>
-            <a href="carrinho.php"><img class="ml-4" src="imagens/utilidades/shopping-cart-349544_1280.png" alt="Cart"></a>
-        </div>            
-    </div>
-</nav>
-
-<div class="container mt-5">
-    <h1 class="mb-4">Catálogo de Camisas</h1>
-
-    <div class="row">
-        <?php while ($row = $result->fetch_assoc()) : ?>
-            <div class="col-md-4 mb-4">
-                <div class="card shadow-sm">
-                    <img src="<?php echo $row['imagem']; ?>" class="card-img-top" alt="<?php echo $row['nome']; ?>">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $row['nome']; ?></h5>
-                        <p class="card-text"><strong>R$ <?php echo number_format($row['preco'], 2, ',', '.'); ?></strong></p>
-                        <a href="#" class="btn btn-primary btn-block">Comprar</a>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <form action="camisetas.php" method="get" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" name="query" placeholder="Buscar" class="form-control mr-2">
                     </div>
-                </div>
+                    <button type="submit" class="btn btn-primary">
+                        <img src="imagens/magnifying-glass-1976105_1280.png" alt="Pesquisar">
+                    </button>
+                </form>
             </div>
-        <?php endwhile; ?>
-    </div>
-</div>
+            <a href="homepage.php" class="mx-auto text-decoration-none">
+                <h1 class="navbar-brand mb-0 text-dark">VINICIN STORE</h1>
+            </a>
+            <div class="d-flex align-items-center">
+                <a href="usuario.php"><img class="ml-4" src="imagens/utilidades/user-2935527_1280.png" alt="User"></a>
+                <a href="carrinho.php"><img class="ml-4" src="imagens/utilidades/shopping-cart-349544_1280.png"
+                        alt="Cart"></a>
+            </div>
+        </div>
+    </nav>
 
-<footer class="footer mt-5">
-    <div class="container">
-        <p>© 2024 Vinicin's Store. Todos os direitos reservados. Vinicin's Store Comércio de Roupas e Acessórios Ltda </p>
+    <div class="container mt-5">
+        <nav class="navbar navbar-expand-lg navbar-custom-2">
+            <div class="container d-flex justify-content-left align-items-center">
+                <h1 class="mb-2">Catálogo de Bermudas</h1>
+            </div>
+        </nav>
+        <?php
+        if ($result->num_rows > 0) {
+            ?>
+            <div class="row">
+                <?php while ($row = $result->fetch_assoc()): ?>
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow-sm">
+                            <img src="<?php echo $row['imagem']; ?>" class="card-img-top" alt="<?php echo $row['nome']; ?>">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $row['nome']; ?></h5>
+                                <p class="card-text"><strong>R$
+                                        <?php echo number_format($row['preco'], 2, ',', '.'); ?></strong></p>
+                                <a href="#" class="btn btn-primary btn-block">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile; ?>
+            </div>
+            <?php
+        } else {
+            echo "deu ruim";
+        }
+        ?>
     </div>
-</footer>
 
-<!-- Script do Bootstrap -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <footer class="footer mt-5">
+        <div class="container">
+            <p>© 2024 Vinicin's Store. Todos os direitos reservados. Vinicin's Store Comércio de Roupas e Acessórios
+                Ltda </p>
+        </div>
+    </footer>
+
+    <!-- Script do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
 
 <?php

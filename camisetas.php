@@ -128,7 +128,7 @@ if (isset($_GET['query'])) {
                 </form>
             </div>
             <a href="homepage.html" class="mx-auto text-decoration-none">
-                <h1 class="navbar-brand mb-0 text-dark">VINICIN'S STORE</h1>
+                <h1 class="navbar-brand mb-0 text-dark">VINICIN STORE</h1>
             </a>
             <div class="d-flex align-items-center">
                 <a href="usuario.php"><img class="ml-4" src="imagens/utilidades/user-2935527_1280.png" alt="User"></a>

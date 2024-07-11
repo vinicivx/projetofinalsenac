@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .home-link:hover, .logout-link:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
 </head>
 <body class="bg-light bg-gradient">
     <div class="container mt-5">
@@ -16,4 +22,15 @@
             </div>
             <div class="form-group">
                 <label for="email">E-mail:</label>
-                <input type="email" class="form-control" id="email"
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            <a href="homepage.php" class="btn btn-primary">Página inicial</a>
+        </form>
+    </div>
+</body>
+</html>
